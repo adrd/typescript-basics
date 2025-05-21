@@ -1,32 +1,28 @@
-const pizza = {
-    name: 'Pepperoni',
-    price: 15,
-    // getName: function() {
-    //     return this.name;
-    // }
-    getName() {
-        return this.name;
-    }
-};
+// function sumAll(arr) {
+//     return arr.reduce((prev, next) => prev + next);
+// }
 
-console.log(pizza.getName());  // Pepperoni
+// const sum = sumAll([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
 
-const toppings = ['pepperoni'];
-
-// const order = { 
-//     pizza: pizza, 
-//     toppings: toppings
-// };
-
-// const order = { pizza, toppings};
-
-// console.log(order);  // { pizza: { name: 'Pepperoni', price: 15 }, toppings: [ 'pepperoni' ] }
-
-function createOrder(pizza, toppings) {
-    return { pizza, toppings };
+function sumAll(message, ...arr) {
+    console.log(arguments);  // { 
+                             //  '0': 'Hello!',
+                             //  '1': 1,
+                             //  '2': 2,
+                             //  '3': 3,
+                             //  '4': 4,
+                             //  '5': 5,
+                             //  '6': 6,
+                             //  '7': 7,
+                             //  '8': 8,
+                             //  '9': 9,
+                             //  '10': 10
+                             // }
+    console.log(arguments[0]);  // Hello!
+    console.log(message);       // Hello!
+    return arr.reduce((prev, next) => prev + next);
 }
 
-console.log(createOrder(pizza, toppings));  // {
-                                            //   pizza: { name: 'Pepperoni', price: 15, getName: [Function: getName] },
-                                            //   toppings: [ 'pepperoni' ]
-                                            // }
+const sum = sumAll('Hello!', 1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+
+console.log(sum);  // 55

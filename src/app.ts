@@ -1,7 +1,32 @@
-function multiply(a, b = 25) {
-    return a * b;
+const pizza = {
+    name: 'Pepperoni',
+    price: 15,
+    // getName: function() {
+    //     return this.name;
+    // }
+    getName() {
+        return this.name;
+    }
+};
+
+console.log(pizza.getName());  // Pepperoni
+
+const toppings = ['pepperoni'];
+
+// const order = { 
+//     pizza: pizza, 
+//     toppings: toppings
+// };
+
+// const order = { pizza, toppings};
+
+// console.log(order);  // { pizza: { name: 'Pepperoni', price: 15 }, toppings: [ 'pepperoni' ] }
+
+function createOrder(pizza, toppings) {
+    return { pizza, toppings };
 }
 
-console.log(multiply(5));  // 125
-console.log(multiply(5, 35));  // 175
-
+console.log(createOrder(pizza, toppings));  // {
+                                            //   pizza: { name: 'Pepperoni', price: 15, getName: [Function: getName] },
+                                            //   toppings: [ 'pepperoni' ]
+                                            // }

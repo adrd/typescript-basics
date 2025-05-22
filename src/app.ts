@@ -1,11 +1,34 @@
-const toppings = ['bacon', 'chilli'];
+const pizza = {
+    name: 'Pepperoni',
+    toppings: ['pepperoni']
+};
 
-const newToppings = ['pepperoni'];
+// function order({ name, toppings }) {
+//     console.log(name, toppings);  // Pepperoni [ 'pepperoni' ]
+// }
 
-// const allToppings = [...toppings, ...newToppings];
+// order(pizza);
 
-// console.log(allToppings);  // [ 'bacon', 'chilli', 'pepperoni' ]
+// function order({ name: pizzaName, toppings: pizzaToppings }) {
+//     console.log(pizzaName, pizzaToppings);  // Pepperoni [ 'pepperoni' ]
+// }
 
-const allToppings = [...newToppings, ...toppings];
+// order(pizza);
 
-console.log(allToppings);  // [ 'pepperoni', 'bacon', 'chilli' ]
+function order({ name: pizzaName, toppings: pizzaToppings }) {
+    return { pizzaName, pizzaToppings }
+}
+
+const { pizzaName } = order(pizza);
+
+const toppings = ['pepperoni', 'bacon', 'chilli'];
+
+// const firstItem = toppings[0];
+
+const [ first, second, third ] = toppings;
+
+console.log(first, second, third);  // pepperoni bacon chilli
+
+function logToppings([first, second, third]: any) {
+    console.log(first, second, third);  // pepperoni bacon chilli
+}

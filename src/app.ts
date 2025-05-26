@@ -1,9 +1,8 @@
-let pizza: { name: string, price: number, getName(): string } = {
-    name: 'Plain Old Pepperoni',
-    price: 20,
-    getName() {
-        return pizza.name;
-    }
-};
+let sizes: number[];
 
-console.log(pizza.getName());  // Plain Old Pepperoni
+sizes = [1, 2, 3];
+
+let toppings: string[];
+// let toppings: Array<string>;
+
+toppings = ['pepperoni', 'tomato', 'bacon'];

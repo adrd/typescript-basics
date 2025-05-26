@@ -1,13 +1,19 @@
-const enum Sizes {
-    Small = 'small',
-    Medium = 'medium',
-    Large = 'large'
+interface Pizza {
+    name: string,
+    sizes: string[]
+};
+
+// interface Pizzas {
+//     data: Pizza[]
+// }
+
+let pizza: Pizza;
+
+function createPizza(name: string, sizes: string[]): Pizza {
+    return {
+        name,
+        sizes
+    }
 }
 
-let selected: Sizes = Sizes.Small;
-
-function updateSize(size: Sizes): void {
-    selected = size;
-}
-
-updateSize(Sizes.Large);
+pizza = createPizza('Pepperoni', ['small', 'medium']); 

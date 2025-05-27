@@ -1,26 +1,35 @@
-interface Sizes {
-    sizes: string[];
-}
+// function Pizza(name: string) {
+//     this.name = name;
+//     this.toppings = [];
+// }
 
-interface Pizza extends Sizes {
+// Pizza.prototype.addTopping = function addTopping(topping: string) {
+//     this.toppings.push(topping);
+// }
+
+// const pizza = new Pizza('Pepperoni');
+
+// pizza.addTopping('pepperoni');
+
+// console.log(pizza);  // Pizza { name: 'Pepperoni', toppings: [ 'pepperoni' ] }
+
+////////////////////////////////////
+
+class Pizza2 {
     name: string;
-    toppings?: number;
-    getAvailableSizes(): string[];
-    [key: number]: string;
-};
+    toppings: string[] = [];
 
-let pizza: Pizza;
+    constructor(name: string) {
+        this.name = name;
+    }
 
-function createPizza(name: string, sizes: string[]): Pizza {
-    return {
-        name,
-        sizes,
-        getAvailableSizes() {
-            return this.sizes
-        }
+    addTopping(topping: string) {
+        this.toppings.push(topping);
     }
 }
 
-pizza = createPizza('Pepperoni', ['small', 'medium']); 
-pizza[1] = 'xyz';
-pizza.toppings = 1;
+const pizza2 = new Pizza2('pepperoni');
+
+pizza2.addTopping('pepperoni');
+
+console.log(pizza2);    // Pizza2 { toppings: [ 'pepperoni' ], name: 'pepperoni' }

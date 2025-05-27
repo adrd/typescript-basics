@@ -1,4 +1,4 @@
-class Sizes {
+abstract class Sizes {
     constructor(public sizes: string[]) {}
 
     get availableSizes() {

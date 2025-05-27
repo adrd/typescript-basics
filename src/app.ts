@@ -1,5 +1,5 @@
 abstract class Sizes {
-    constructor(public sizes: string[]) {}
+    constructor(protected sizes: string[]) {}
 
     get availableSizes() {
         return this.sizes;
@@ -13,17 +13,23 @@ abstract class Sizes {
 class Pizza extends Sizes {
     public toppings: string[] = [];
 
-    constructor(readonly name: string, public sizes: string[]) {
+    constructor(readonly name: string, sizes: string[]) {
         super(sizes)
     }
 
     public addTopping(topping: string) {
         this.toppings.push(topping);
     }
+
+    public updateSizes(sizes: string[]) {
+        this.sizes = sizes;
+    }
 }
 
 const pizza = new Pizza('pepperoni', ['small', 'medium']);
 
-pizza.addTopping('pepperoni');
-
 console.log(pizza.availableSizes);  // [ 'small', 'medium' ]
+
+pizza.updateSizes(['large']);
+
+console.log(pizza.availableSizes);  // [ 'large' ]

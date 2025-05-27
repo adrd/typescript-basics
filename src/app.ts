@@ -1,35 +1,15 @@
-// function Pizza(name: string) {
-//     this.name = name;
-//     this.toppings = [];
-// }
+class Pizza {
+    public toppings: string[] = [];
 
-// Pizza.prototype.addTopping = function addTopping(topping: string) {
-//     this.toppings.push(topping);
-// }
+    constructor(private name: string) {}
 
-// const pizza = new Pizza('Pepperoni');
-
-// pizza.addTopping('pepperoni');
-
-// console.log(pizza);  // Pizza { name: 'Pepperoni', toppings: [ 'pepperoni' ] }
-
-////////////////////////////////////
-
-class Pizza2 {
-    name: string;
-    toppings: string[] = [];
-
-    constructor(name: string) {
-        this.name = name;
-    }
-
-    addTopping(topping: string) {
+    public addTopping(topping: string) {
         this.toppings.push(topping);
     }
 }
 
-const pizza2 = new Pizza2('pepperoni');
+const pizza = new Pizza('pepperoni');
 
-pizza2.addTopping('pepperoni');
+pizza.addTopping('pepperoni');
 
-console.log(pizza2);    // Pizza2 { toppings: [ 'pepperoni' ], name: 'pepperoni' }
+console.log(pizza);    // Pizza { toppings: [ 'pepperoni' ], name: 'pepperoni' }
